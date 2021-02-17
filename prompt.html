@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Click the button to demonstrate the prompt box.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+
+class Node {
+    constructor(value) {
+        this.val = value;
+        this.next = null; 
+    }
+}
+
+class SLL{
+    constructor(){
+        this.head = null;
+    }
+
+    display(){
+        var runner = this.head
+        var str = ''
+        while(runner!=null){
+            str += runner.val + " "
+            runner = runner.next
+        }
+        return str
+    }
+
+}
+
+var myNode1 = new Node(32)
+var myNode2 = new Node(6)
+var myNode3 = new Node(5)
+var myNode4 = new Node(9)
+var myNode5 = new Node(10)
+var myNode6 = new Node(7)
+
+var newNode = new Node()
+
+
+var sll1 = new SLL()
+
+sll1.head = myNode1
+
+myNode1.next = myNode2
+myNode2.next = myNode3
+myNode3.next = myNode4
+myNode4.next = myNode5
+myNode5.next = myNode6
+
+var sll2 = new SLL()
+
+console.log(sll1.display())
+
+function myFunction() {
+    var person = prompt("Please enter your name", "Harry Potter");
+    if (person != null) {
+        document.getElementById("demo").innerHTML =
+        "Hello " + person + "! How are you today?";
+    }
+    
+}
+</script>
+</body>
+</html>

@@ -150,15 +150,29 @@ class SLL{
     prependVal(newNode, va, before){
         newNode.val = va;
         var runner = this.head;
-        var store_node = new Node(0);
-        console.log(newNode.val, before);
 
-        while(runner.next.val !== before || runner.next !== null) {
+        if(this.head.val == before){
+            newNode.next = this.head
+            this.head = newNode
+
+            var runner = this.head
+            var str = ''
+            while(runner!=null){
+                str += runner.val + " "
+                runner = runner.next
+            }
+            return str
+        }
+        
+        while( runner.next != null && runner.next.val != before) {
             runner = runner.next;
         }
-        store_node = runner.next;
+        
+        newNode.next = runner.next;
         runner.next = newNode;
-        newNode.next = store_node.next;
+        
+
+        //what if the head node has the value?
 
         
         //display function
@@ -170,7 +184,82 @@ class SLL{
         }
         return str
     }
+
+    appendVal(newNode, va, after){
+        newNode.val = va;
+        var runner = this.head;
+    
+        if(this.head.val == after){
+            newNode.next = this.head.next
+            this.head.next = newNode
+
+            var runner = this.head
+            var str = ''
+            while(runner!=null){
+                str += runner.val + " "
+                runner = runner.next
+            }
+            return str
+        }
         
+        while( runner.next != null && runner.val != after) {
+            runner = runner.next;
+        }
+        
+        newNode.next = runner.next;
+        runner.next = newNode;
+
+        var runner = this.head
+        var str = ''
+        while(runner!=null){
+            str += runner.val + " "
+            runner = runner.next
+        }
+        return str
+    }
+
+    removeVal(newNode, va){
+        newNode.val = va;
+        var runner = this.head;
+
+        if(this.head.val == va){
+            this.head = this.head.next
+
+            var runner = this.head
+            var str = ''
+            while(runner!=null){
+                str += runner.val + " "
+                runner = runner.next
+            }
+            return str
+        }
+        while(runner.next != null && runner.next.val != va) {
+            runner = runner.next;
+        }
+
+        if(runner.next == null){
+            var runner = this.head
+            var str = ''
+            while(runner!=null){
+                str += runner.val + " "
+                runner = runner.next
+            }
+            return str
+        }
+        runner.next = runner.next.next
+
+        var runner = this.head
+        var str = ''
+        while(runner!=null){
+            str += runner.val + " "
+            runner = runner.next
+        }
+        return str
+    }
+    
+    listPrompt(){
+        console.log(prompt('please enter your name'))
+    }
 }
 
 
@@ -185,7 +274,9 @@ var newNode = new Node()
 
 
 var sll1 = new SLL()
+
 sll1.head = myNode1
+
 myNode1.next = myNode2
 myNode2.next = myNode3
 myNode3.next = myNode4
@@ -204,11 +295,14 @@ var sll2 = new SLL()
 
 // console.log(sll1.contains(6))
 // console.log(sll1.length())
-// console.log(sll1.display())
+console.log(sll1.display())
 // console.log(sll1.maxMinAvg())
 // console.log(sll1.back())
 // console.log(sll1.removeBack())
 // console.log(sll1.addBack(99))
 // console.log(sll1.minToFront())
 // console.log(sll1.maxToBack())
-console.log(sll1.prependVal(newNode, 8, 9))
+// console.log(sll1.prependVal(newNode, 8, 1))
+// console.log(sll1.appendVal(newNode, 3, 5))
+// console.log(sll1.removeVal(newNode, 32))
+console.log(sll1.listPrompt())
