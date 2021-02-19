@@ -6,9 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Click the button to demonstrate the prompt box.</p>
+    <p>Click the button add a value to the string</p>
 
-<button onclick="myFunction()">Try it</button>
+<button onclick="listPrompt()">Try it</button>
 
 <p id="demo"></p>
 
@@ -62,11 +62,11 @@ var sll2 = new SLL()
 
 console.log(sll1.display())
 
-function myFunction() {
-    var person = prompt("Please enter your name", "Harry Potter");
-    if (person != null) {
+function listPrompt() {
+    var string = prompt("Please enter node value", "10");
+    if (string != null) {
         document.getElementById("demo").innerHTML =
-        "Hello " + person + "! How are you today?";
+        "Here is your node string (" + string + ")";
     }
     
 }

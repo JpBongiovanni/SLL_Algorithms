@@ -256,10 +256,6 @@ class SLL{
         }
         return str
     }
-    
-    listPrompt(){
-        console.log(prompt('please enter your name'))
-    }
 }
 
 
@@ -305,4 +301,3 @@ console.log(sll1.display())
 // console.log(sll1.prependVal(newNode, 8, 1))
 // console.log(sll1.appendVal(newNode, 3, 5))
 // console.log(sll1.removeVal(newNode, 32))
-console.log(sll1.listPrompt())
