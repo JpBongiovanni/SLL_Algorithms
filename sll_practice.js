@@ -256,6 +256,23 @@ class SLL{
         }
         return str
     }
+
+    splitOnVal(num){
+        var runner = this.head;
+        while(runner!=null){
+            if(runner.val == num){
+                this.head = runner
+            }
+            runner = runner.next
+        }
+        var runner = this.head
+        var str = ''
+        while(runner!=null){
+            str += runner.val + " "
+            runner = runner.next
+        }
+        return str
+    }
 }
 
 
@@ -301,3 +318,4 @@ console.log(sll1.display())
 // console.log(sll1.prependVal(newNode, 8, 1))
 // console.log(sll1.appendVal(newNode, 3, 5))
 // console.log(sll1.removeVal(newNode, 32))
+console.log(sll1.splitOnVal(0))
