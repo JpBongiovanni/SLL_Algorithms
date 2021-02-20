@@ -63,10 +63,13 @@ var sll2 = new SLL()
 console.log(sll1.display())
 
 function listPrompt() {
-    var string = prompt("Please enter node value", "10");
-    if (string != null) {
+    var num = prompt("Please enter node value", "10");
+    newNode = new Node(num)
+
+    if (num != null) {
         document.getElementById("demo").innerHTML =
-        "Here is your node string (" + string + ")";
+        "Here is your node string (" + num + ")";
+        console.log(newNode)
     }
     
 }
