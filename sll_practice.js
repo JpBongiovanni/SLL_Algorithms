@@ -239,12 +239,7 @@ class SLL{
 
         if(runner.next == null){
             var runner = this.head
-            var str = ''
-            while(runner!=null){
-                str += runner.val + " "
-                runner = runner.next
-            }
-            return str
+            return this.head
         }
         runner.next = runner.next.next
 
@@ -273,6 +268,34 @@ class SLL{
         }
         return str
     }
+
+    removeNeg(){
+        var runner = this.head;
+
+            while(runner.next!=null){
+                if(this.head == null){
+                    return "Empty List"
+                }
+                if(this.head.val < 0){
+                    this.head = this.head.next
+                    continue
+                }
+                if(runner.next.val < 0){
+                    runner.next = runner.next.next
+                    runner = this.head
+                    continue
+                }
+                runner=runner.next
+            }
+        
+        var runner = this.head
+            var str = ''
+            while(runner!=null){
+                str += runner.val + " "
+                runner = runner.next
+            }
+            return str
+    }
 }
 
 
@@ -280,7 +303,7 @@ var myNode1 = new Node(32)
 var myNode2 = new Node(6)
 var myNode3 = new Node(5)
 var myNode4 = new Node(9)
-var myNode5 = new Node(10)
+var myNode5 = new Node(1)
 var myNode6 = new Node(7)
 
 var newNode = new Node()
@@ -318,4 +341,5 @@ console.log(sll1.display())
 // console.log(sll1.prependVal(newNode, 8, 1))
 // console.log(sll1.appendVal(newNode, 3, 5))
 // console.log(sll1.removeVal(newNode, 32))
-console.log(sll1.splitOnVal(0))
+// console.log(sll1.splitOnVal(0))
+console.log(sll1.removeNeg())
