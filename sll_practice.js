@@ -296,9 +296,53 @@ class SLL{
             }
             return str
     }
+
+    concat(sll1, sll2){
+        if(sll1 == null){return sll2}
+        if(sll2 == null){return sll1}
+
+        var runner = this.head;
+        while(runner != null){
+            if(runner.next == null){
+                runner.next = sll2.head
+                break
+            }
+            runner = runner.next
+        }
+
+        var runner = this.head
+        var str = ''
+        while(runner!=null){
+            str += runner.val + " "
+            runner = runner.next
+        }
+        return str
+    }
+
+    partition(va){
+        var sllBefore = new SLL();
+        var sllAfter = new SLL();
+        var runner = this.head;
+
+        while(runner){
+            if(runner.val <= va){
+                runner = sllBefore.head;
+            }
+            if(runner.val > va){
+                runner = sllAfter.head;
+            }
+        }
+        var runner = sllAfter.head
+        var str = ''
+        while(runner!=null){
+            str += runner.val + " "
+            runner = runner.next
+        }
+        return str
+    }
 }
 
-
+//sll1
 var myNode1 = new Node(32)
 var myNode2 = new Node(6)
 var myNode3 = new Node(5)
@@ -307,7 +351,6 @@ var myNode5 = new Node(1)
 var myNode6 = new Node(7)
 
 var newNode = new Node()
-
 
 var sll1 = new SLL()
 
@@ -319,19 +362,34 @@ myNode3.next = myNode4
 myNode4.next = myNode5
 myNode5.next = myNode6
 
+//sll2
+
+var sll2Node1 = new Node(400)
+var sll2Node2 = new Node(90)
+var sll2Node3 = new Node(36)
+var sll2Node4 = new Node(29)
+var sll2Node5 = new Node(67)
+var sll2Node6 = new Node(98)
+
 var sll2 = new SLL()
+
+sll2.head = sll2Node1
+
+sll2Node1.next = sll2Node2
+sll2Node2.next = sll2Node3
+sll2Node3.next = sll2Node4
+sll2Node4.next = sll2Node5
+sll2Node5.next = sll2Node6
 
 // console.log(sll1.front())
 // console.log(sll2.front())
-
 // console.log(sll1.removeFront())
 // console.log(sll2.removeFront())
-
 // console.log(sll1.addFront("Dill"))
-
 // console.log(sll1.contains(6))
 // console.log(sll1.length())
 console.log(sll1.display())
+// console.log(sll2.display())
 // console.log(sll1.maxMinAvg())
 // console.log(sll1.back())
 // console.log(sll1.removeBack())
@@ -342,4 +400,6 @@ console.log(sll1.display())
 // console.log(sll1.appendVal(newNode, 3, 5))
 // console.log(sll1.removeVal(newNode, 32))
 // console.log(sll1.splitOnVal(0))
-console.log(sll1.removeNeg())
+// console.log(sll1.removeNeg())
+// console.log(sll1.concat(sll1, sll2))
+console.log(sll1.partition(9))
