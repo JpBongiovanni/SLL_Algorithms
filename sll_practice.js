@@ -340,6 +340,16 @@ class SLL{
         }
         return str
     }
+
+    secondToLast(){
+        var runner = this.head;
+        while(runner.next != null){
+            if(runner.next.next == null){
+                return runner.val
+            }
+            runner = runner.next
+        }
+    }
 }
 
 //sll1
@@ -402,4 +412,5 @@ console.log(sll1.display())
 // console.log(sll1.splitOnVal(0))
 // console.log(sll1.removeNeg())
 // console.log(sll1.concat(sll1, sll2))
-console.log(sll1.partition(9))
+// console.log(sll1.partition(9)) This one is incomplete
+console.log(sll1.secondToLast())
