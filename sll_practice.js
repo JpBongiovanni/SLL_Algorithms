@@ -344,6 +344,9 @@ class SLL{
     secondToLast(){
         var runner = this.head;
         while(runner.next != null){
+            if(runner.next == null){
+                return runner.val
+            }
             if(runner.next.next == null){
                 return runner.val
             }
