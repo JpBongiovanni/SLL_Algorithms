@@ -319,6 +319,7 @@ class SLL{
         return str
     }
 
+    //partition is incomplete
     partition(va){
         var sllBefore = new SLL();
         var sllAfter = new SLL();
@@ -352,6 +353,27 @@ class SLL{
             }
             runner = runner.next
         }
+    }
+
+    //delete a listnode without referencing the previous node
+    removeSelf(va){
+        var runner = this.head
+        while(runner.next != null){
+            if(runner.val == va){
+                runner.val = runner.next.val
+                runner.next = runner.next.next
+                break
+            }
+            runner = runner.next
+        }
+        
+        var runner = this.head
+        var str = ''
+        while(runner!=null){
+            str += runner.val + " "
+            runner = runner.next
+        }
+        return str
     }
 }
 
@@ -416,4 +438,5 @@ console.log(sll1.display())
 // console.log(sll1.removeNeg())
 // console.log(sll1.concat(sll1, sll2))
 // console.log(sll1.partition(9)) This one is incomplete
-console.log(sll1.secondToLast())
+// console.log(sll1.secondToLast())
+console.group(sll1.removeSelf(32))
