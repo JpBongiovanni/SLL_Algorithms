@@ -375,6 +375,11 @@ class SLL{
         }
         return str
     }
+
+    //copy a list by returning a new list
+    copy(){
+        var runner = this.head
+    }
 }
 
 //sll1
@@ -439,4 +444,5 @@ console.log(sll1.display())
 // console.log(sll1.concat(sll1, sll2))
 // console.log(sll1.partition(9)) This one is incomplete
 // console.log(sll1.secondToLast())
-console.group(sll1.removeSelf(32))
+// console.log(sll1.removeSelf(32))
+console.log(sll1.copy())
