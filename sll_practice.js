@@ -379,6 +379,9 @@ class SLL{
     //copy a list by returning a new list
     copy(){
         var runner = this.head
+        while(runner != null){
+            
+        }
     }
 }
 
