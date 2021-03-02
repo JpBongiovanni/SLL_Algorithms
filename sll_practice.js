@@ -380,7 +380,7 @@ class SLL{
     copy(){
         var runner = this.head
         while(runner != null){
-            var newNode1 = new Node(runner)
+            runner.val = 
         }
     }
 }
