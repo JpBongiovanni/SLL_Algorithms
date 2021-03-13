@@ -376,22 +376,50 @@ class SLL{
         return str
     }
 
-    //copy a list by returning a new list
+    // copy a list by returning a new list
     copy(){
+        // var runner = this.head
+        // while(runner != null){
+        //     runner.val = 
+        // }
+    }
+
+    //remove from the list any nodes that have values less than lowVal or higher than highVal
+    filter(lowVal, highVal){
         var runner = this.head
-        while(runner != null){
-            runner.val = 
+        while(runner.next != null){
+            if(this.head == null){
+                return "Empty List"
+            }
+            if(this.head.val < lowVal || this.head.val > highVal){
+                this.head = this.head.next
+                continue
+            }
+            if(runner.val < lowVal || runner.val > highVal){
+                runner.val = runner.next.val
+                runner.next = runner.next.next
+                continue
+            }
+            runner = runner.next
         }
+
+        var runner = this.head
+        var str = ''
+        while(runner!=null){
+            str += runner.val + " "
+            runner = runner.next
+        }
+        return str
     }
 }
 
 //sll1
 var myNode1 = new Node(32)
-var myNode2 = new Node(6)
-var myNode3 = new Node(5)
-var myNode4 = new Node(9)
-var myNode5 = new Node(1)
-var myNode6 = new Node(7)
+var myNode2 = new Node(60)
+var myNode3 = new Node(50)
+var myNode4 = new Node(90)
+var myNode5 = new Node(90)
+var myNode6 = new Node(70)
 
 var newNode = new Node()
 
@@ -448,4 +476,5 @@ console.log(sll1.display())
 // console.log(sll1.partition(9)) This one is incomplete
 // console.log(sll1.secondToLast())
 // console.log(sll1.removeSelf(32))
-console.log(sll1.copy())
+// console.log(sll1.copy())
+console.log(sll1.filter(3, 8))
