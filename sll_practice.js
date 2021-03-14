@@ -411,15 +411,20 @@ class SLL{
         }
         return str
     }
+
+    //find the second largest value in a list node
+    secondLargest(){
+        
+    }
 }
 
 //sll1
 var myNode1 = new Node(32)
-var myNode2 = new Node(60)
-var myNode3 = new Node(50)
-var myNode4 = new Node(90)
-var myNode5 = new Node(90)
-var myNode6 = new Node(70)
+var myNode2 = new Node(6)
+var myNode3 = new Node(5)
+var myNode4 = new Node(9)
+var myNode5 = new Node(12)
+var myNode6 = new Node(2)
 
 var newNode = new Node()
 
@@ -477,4 +482,5 @@ console.log(sll1.display())
 // console.log(sll1.secondToLast())
 // console.log(sll1.removeSelf(32))
 // console.log(sll1.copy())
-console.log(sll1.filter(3, 8))
+// console.log(sll1.filter(3, 8))
+console.log(sll1.secondLargest())
