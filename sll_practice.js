@@ -412,9 +412,31 @@ class SLL{
         return str
     }
 
-    //find the second largest value in a list node
+    //find the second largest value in a list node,then find the second to last node value.
     secondLargest(){
-        
+        var runner = this.head
+        if(this.head.val > this.head.next.val){
+            var max = this.head.val;
+            var secondMax = this.head.next.val;
+        }
+        if(this.head.val <= this.head.next.val){
+            var max = this.head.next.val;
+            var secondMax = this.head.val;
+        }
+        this.head = this.head.next.next
+
+        while(this.head != null){
+            if(this.head.val > max){
+                secondMax = max;
+                max = this.head
+            }
+            else if(this.head.val > secondMax){
+                secondMax = this.head.val
+            }
+            this.head = this.head.next
+        }
+        console.log(max);
+        console.log(secondMax);
     }
 }
 
@@ -422,7 +444,7 @@ class SLL{
 var myNode1 = new Node(32)
 var myNode2 = new Node(6)
 var myNode3 = new Node(5)
-var myNode4 = new Node(9)
+var myNode4 = new Node(19)
 var myNode5 = new Node(12)
 var myNode6 = new Node(2)
 
