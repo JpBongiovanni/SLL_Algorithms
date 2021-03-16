@@ -438,6 +438,37 @@ class SLL{
         console.log(max);
         console.log(secondMax);
     }
+
+    //using two linked lists, 'zip' the lists together. Return a new combined list
+    zip(sll1, sll2){
+        var newSll = new SLL()
+        var newNode = new Node(1)
+        newSll.head = newNode
+
+        if(sll1 == null){return sll2};
+        if(sll2 == null){return sll1};
+
+        var runner1 = sll1.head;
+        var runner2 = sll2.head;
+        var runner3 = newSll.head;
+
+        newSll.head = runner1
+        while(runner1 != null && runner2.next != null){
+            runner3 = runner1;
+            runner3.next = runner2;
+
+            runner3 = runner3.next.next;
+            runner1 = runner1.next;
+        }
+        console.log(newSll.head)
+        var runner = newSll.head
+        var str = ''
+        while(runner!=null){
+            str += runner.val + " "
+            runner = runner.next
+        }
+        return str
+    }
 }
 
 //sll1
@@ -505,4 +536,5 @@ console.log(sll1.display())
 // console.log(sll1.removeSelf(32))
 // console.log(sll1.copy())
 // console.log(sll1.filter(3, 8))
-console.log(sll1.secondLargest())
+// console.log(sll1.secondLargest())
+console.log(sll1.zip(sll1, sll2))
