@@ -440,28 +440,18 @@ class SLL{
     }
 
     //using two linked lists, 'zip' the lists together. Return a new combined list
+    //not complete
     zip(sll1, sll2){
-        var newSll = new SLL()
-        var newNode = new Node(1)
-        newSll.head = newNode
-
-        if(sll1 == null){return sll2};
-        if(sll2 == null){return sll1};
-
-        var runner1 = sll1.head;
-        var runner2 = sll2.head;
-        var runner3 = newSll.head;
-
-        newSll.head = runner1
-        while(runner1 != null && runner2.next != null){
-            runner3 = runner1;
-            runner3.next = runner2;
-
-            runner3 = runner3.next.next;
-            runner1 = runner1.next;
+        var mergedLinkedListHead = { val : -1, next : null };
+        var runner = mergedLinkedListHead;
+        
+        while(sll1 && sll2){
+            runner.next = sll1.head;
+            sll2 = sll2.next;
         }
-        console.log(newSll.head)
-        var runner = newSll.head
+        runner = runner.next
+
+        var runner = mergedLinkedListHead.head
         var str = ''
         while(runner!=null){
             str += runner.val + " "
@@ -469,14 +459,18 @@ class SLL{
         }
         return str
     }
+
+    dedupe(){
+        
+    }
 }
 
 //sll1
 var myNode1 = new Node(32)
-var myNode2 = new Node(6)
+var myNode2 = new Node(1)
 var myNode3 = new Node(5)
-var myNode4 = new Node(19)
-var myNode5 = new Node(12)
+var myNode4 = new Node(32)
+var myNode5 = new Node(2)
 var myNode6 = new Node(2)
 
 var newNode = new Node()
@@ -537,4 +531,5 @@ console.log(sll1.display())
 // console.log(sll1.copy())
 // console.log(sll1.filter(3, 8))
 // console.log(sll1.secondLargest())
-console.log(sll1.zip(sll1, sll2))
+// console.log(sll1.zip(sll1, sll2)) This one is incomplete
+console.log(sll1.dedupe())
