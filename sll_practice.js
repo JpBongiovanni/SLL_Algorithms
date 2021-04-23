@@ -463,15 +463,47 @@ class SLL{
     dedupe(){
         
     }
+
+    zip2(){
+        var runner1 = this.head;
+        var runner2 = this.head.next;
+        var runner3 = this.head;
+
+        while(runner2.next != null){
+            while(runner3 != null){
+                if(runner3.next == null){
+                    runner1.next = runner3;
+                    runner3.next = runner2;
+                    console.log(runner1.val);
+                    console.log(runner3.val);
+                    console.log(runner3.next.val);
+                }
+                runner3 = runner3.next;
+                
+            }
+            runner1 = runner2
+            runner2 = runner1.next
+            
+        }
+        var runner = this.head
+        var str = ''
+        while(runner!=null){
+            str += runner.val + " "
+            runner = runner.next
+        }
+        return str
+    }
 }
 
+
+
 //sll1
-var myNode1 = new Node(32)
-var myNode2 = new Node(1)
-var myNode3 = new Node(5)
-var myNode4 = new Node(32)
-var myNode5 = new Node(2)
-var myNode6 = new Node(2)
+var myNode1 = new Node(1)
+var myNode2 = new Node(2)
+var myNode3 = new Node(3)
+var myNode4 = new Node(4)
+var myNode5 = new Node(5)
+var myNode6 = new Node(6)
 
 var newNode = new Node()
 
@@ -532,4 +564,5 @@ console.log(sll1.display())
 // console.log(sll1.filter(3, 8))
 // console.log(sll1.secondLargest())
 // console.log(sll1.zip(sll1, sll2)) This one is incomplete
-console.log(sll1.dedupe())
+// console.log(sll1.dedupe())
+console.log(sll1.zip2())
