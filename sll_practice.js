@@ -474,15 +474,12 @@ class SLL{
                 if(runner3.next == null){
                     runner1.next = runner3;
                     runner3.next = runner2;
-                    console.log(runner1.val);
-                    console.log(runner3.val);
-                    console.log(runner3.next.val);
                 }
                 runner3 = runner3.next;
-                
             }
             runner1 = runner2
             runner2 = runner1.next
+            runner3 = runner1
             
         }
         var runner = this.head
