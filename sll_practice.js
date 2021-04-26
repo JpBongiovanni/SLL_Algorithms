@@ -469,13 +469,14 @@ class SLL{
         var runner2 = this.head.next;
         var runner3 = this.head;
 
-        while(runner2.next != null){
+        while(runner.next != null){
             while(runner3 != null){
                 if(runner3.next == null){
                     runner1.next = runner3;
                     runner3.next = runner2;
                 }
                 runner3 = runner3.next;
+                
             }
             runner1 = runner2
             runner2 = runner1.next
