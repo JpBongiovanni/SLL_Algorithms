@@ -474,6 +474,7 @@ class SLL{
                 if(runner3.next == null){
                     runner1.next = runner3;
                     runner3.next = runner2;
+                    break
                 }
                 runner3 = runner3.next;
                 
