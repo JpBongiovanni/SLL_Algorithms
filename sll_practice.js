@@ -474,7 +474,7 @@ class SLL{
                 if(runner3.next == null){
                     runner1.next = runner3;
                     runner3.next = runner2;
-                    break
+                    continue
                 }
                 runner3 = runner3.next;
                 
@@ -484,13 +484,6 @@ class SLL{
             runner3 = runner1
             
         }
-        var runner = this.head
-        var str = ''
-        while(runner!=null){
-            str += runner.val + " "
-            runner = runner.next
-        }
-        return str
     }
 }
 
