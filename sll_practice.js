@@ -464,27 +464,6 @@ class SLL{
         
     }
 
-    zip2(){
-        var runner1 = this.head;
-        var runner2 = this.head.next;
-        var runner3 = this.head;
-
-        while(runner.next != null){
-            while(runner3 != null){
-                if(runner3.next == null){
-                    runner1.next = runner3;
-                    runner3.next = runner2;
-                    continue
-                }
-                runner3 = runner3.next;
-                
-            }
-            runner1 = runner2
-            runner2 = runner1.next
-            runner3 = runner1
-            
-        }
-    }
 }
 
 
