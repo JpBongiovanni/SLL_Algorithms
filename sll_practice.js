@@ -460,7 +460,26 @@ class SLL{
         return str
     }
 
-    dedupe(){
+    reverse(){
+        var runner1 = null;
+        var runner2 = this.head;
+        
+        while(runner2 != null){
+            var runner3 = runner2.next;
+            runner2.next = runner1;
+            runner1 = runner2;
+            runner2 = runner3
+        }
+
+        var runner = runner1
+        var str = ''
+        while(runner!=null){
+            str += runner.val + " "
+            runner = runner.next
+        }
+        return str
+
+
         
     }
 
@@ -536,4 +555,5 @@ console.log(sll1.display())
 // console.log(sll1.secondLargest())
 // console.log(sll1.zip(sll1, sll2)) This one is incomplete
 // console.log(sll1.dedupe())
-console.log(sll1.zip2())
+// console.log(sll1.zip2())
+console.log(sll1.reverse())
